@@ -5,6 +5,7 @@ var morgan = require('morgan');
 var path = require('path');
 
 app.use(express.static(path.join(__dirname, '../client/')));
+app.use(express.static(path.join(__dirname, '../db/')));
 
 var port = process.env.PORT || 3000;
 app.use(bodyParser.json()); // for parsing application/json
@@ -13,6 +14,10 @@ app.use (morgan('dev'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../client/index.html'));
+});
+
+app.get('/getRestaurants', function(req, res) {
+  res.send('hey');
 });
 
 app.post('/', function (req, res) {

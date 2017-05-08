@@ -1,17 +1,34 @@
 import React from 'react';
+import $ from 'jquery';
 import Header from './Header.jsx';
 import MainBody from './Mainbody.jsx';
 import Footer from './Footer.jsx';
 import QuestPage from './QuestPage.jsx';
 import ResultPage from './ResultPage.jsx';
+import LoginPage from './LoginPage.jsx';
+import SignupPage from './SignupPage.jsx';
 import ProfilePage from './ProfilePage.jsx';
+
+const data = window.exampleData;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {input: 'quest_page', biz: data};
+  }
 
-    this.state = {input: 'main_body'};
-
+  questOnClick(componentName) {
+    $.ajax({
+      url: '/getRestaurants',
+      method: 'GET',
+      success: (data) => {
+        console.log(data);
+      },
+      error: (err) => {
+        console.log('Some Error:', err);
+      }
+    });
+    this.setState({input: componentName});
   }
 
   handleClick(componentName) {
@@ -19,7 +36,6 @@ class App extends React.Component {
   }
 
   render() {
-
     var ComponentToRender = QuestPage;
     if (this.state.input === 'quest_page') {
       ComponentToRender = QuestPage;
@@ -29,9 +45,11 @@ class App extends React.Component {
       ComponentToRender = ResultPage;
     } else if (this.state.input === 'login_page') {
       ComponentToRender = LoginPage;
+    } else if (this.state.input === 'result_page') {
+      ComponentToRender = ResultPage;
     } else if (this.state.input === 'signup_page') {
       ComponentToRender = SignupPage;
-    }
+    } 
     return (
       <div>
         <Header />
@@ -40,9 +58,9 @@ class App extends React.Component {
           <div className="panel panel-default">
           <div className="panel-heading">
             <h3 className="panel-title">Quest</h3>
-                
-              <ComponentToRender />
 
+              <ComponentToRender questOnClick={this.questOnClick.bind(this)} restos={this.state.biz}/>
+                   
           </div>
         </div>
 
