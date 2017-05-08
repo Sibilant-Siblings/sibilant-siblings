@@ -41,6 +41,8 @@ class App extends React.Component {
       ComponentToRender = QuestPage;
     } else if (this.state.input === 'profile_page') {
       ComponentToRender = ProfilePage;
+    } else if (this.state.input === 'result_page') {
+      ComponentToRender = ResultPage;
     } else if (this.state.input === 'login_page') {
       ComponentToRender = LoginPage;
     } else if (this.state.input === 'result_page') {
