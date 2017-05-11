@@ -3,3 +3,4 @@
 .DS_Store
 /client/dist/bundle.js
 apisecrets.js
+/client/dist/bundle.js.map
