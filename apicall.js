@@ -1,6 +1,6 @@
 const yelp = require('yelp-fusion');
-const ApiSecrets = require('./apisecrets.js');
-const token = ApiSecrets.yelpToken;
+// const ApiSecrets = require('./apisecrets.js');
+// const token = ApiSecrets.yelpToken;
 
 let getRestaurantsFromYelp = function(userPref, callback) {
   const id = 1; //hardcoding id for 1st user
