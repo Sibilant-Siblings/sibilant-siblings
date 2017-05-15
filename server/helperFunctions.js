@@ -13,7 +13,7 @@ var chooseTasks = function(restaurants, size) {
 };
 
 let getUserPrefsFromDb = function(user, callback) {
-  let id = user.id ? user.id : 1;
+  let id = user.id ? user.id : 2;
   db.query('SELECT * FROM users WHERE id = ?', id, function(err, results) {
     if (err) {
       callback(err, null);
