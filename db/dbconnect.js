@@ -5,9 +5,9 @@ var mysql = require('mysql');
 // and to the database "chat".
 
 var connection = mysql.createConnection({
-  host: CLEARDB_DATABASE_URL,
-  user: 'root',
-  password: '',
+  host: 'us-cdbr-iron-east-03.cleardb.net',
+  user: 'ba3792a798d949',
+  password: '75eb8e04',
   database: 'foodQuest',
   multipleStatements: true
 });
