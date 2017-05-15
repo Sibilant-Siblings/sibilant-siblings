@@ -3,7 +3,7 @@ var mysql = require('mysql');
 // Create a database connection and export it from this file.
 
 var connection = mysql.createConnection({
-  host: 'localhost',
+  host: DATABASE_URL,
   user: 'root',
   password: '',
   database: 'foodQuest',
