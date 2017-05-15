@@ -49,7 +49,7 @@ let updateProfilePrefsInDb = function(user, callback) {
 };
 
 let setQuestInDb = function(dataFromYelp, callback) {
-  var defaultUserID = 1;
+  var defaultUserID = 2;
   var queryData = [];
   for (var i = 0; i < dataFromYelp.length; i++) {
     queryData.push(dataFromYelp[i].name);
