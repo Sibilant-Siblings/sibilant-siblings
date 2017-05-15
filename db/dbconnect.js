@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
   host: 'us-cdbr-iron-east-03.cleardb.net',
   user: 'ba3792a798d949',
   password: '75eb8e04',
-  database: 'foodQuest',
+  database: 'heroku-foodQuest',
   multipleStatements: true
 });
 
