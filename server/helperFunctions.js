@@ -13,7 +13,7 @@ var chooseTasks = function(restaurants, size) {
 };
 
 let getUserPrefsFromDb = function(user, callback) {
-  let id = user.id ? user.id : 2;
+  let id = user.id ? user.id : 1;
   db.query('SELECT * FROM users WHERE id = ?', id, function(err, results) {
     if (err) {
       callback(err, null);
@@ -49,7 +49,7 @@ let updateProfilePrefsInDb = function(user, callback) {
 };
 
 let setQuestInDb = function(dataFromYelp, callback) {
-  var defaultUserID = 2;
+  var defaultUserID = 1;
   var queryData = [];
   for (var i = 0; i < dataFromYelp.length; i++) {
     queryData.push(dataFromYelp[i].name);
