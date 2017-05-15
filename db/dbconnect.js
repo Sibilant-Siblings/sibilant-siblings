@@ -5,7 +5,7 @@ var mysql = require('mysql');
 // and to the database "chat".
 
 var connection = mysql.createConnection({
-  host: '127.0.0.1',
+  host: 'mysql://ba3792a798d949:75eb8e04@us-cdbr-iron-east-03.cleardb.net/heroku_f5c8b8d3702a6c0?reconnect=trues',
   user: 'root',
   password: '',
   database: 'foodQuest',
